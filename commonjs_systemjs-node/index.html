@@ -3,26 +3,16 @@
 <html>
     <head>
         <meta charset="UTF-8"> 
-        <title>Test module CommonJS (executed with node.js)</title>
+        <title>Test module CommonJS + SystemJS (executed with node.js)</title>
         <script src="node_modules/systemjs/dist/system.js"></script> 
         <script>
-            // var SystemJS = require('systemjs');
-
             // Le code suivant correspond à de la configuration 
             System.config({ 
                 meta:{    
                     format: 'cjs'  // cjs correspond à la configuration pour le format commonjs 
-                }//,
-                //baseURL: '/js/module1'
-                // map: {
-                // "js/module2.js": {
-                //     "module1": "js/module1.js"
-                // }
-            //}
+                }
             }); 
 
-            //System.import('js/module1.js')
-            // System.import('js/module1.js');
             System.import('js/module1.js')
                 .then(function(module1) {
                     module1.publicFuncModule1();

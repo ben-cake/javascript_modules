@@ -1,3 +1,5 @@
+var module2 = require('js/module2.js');
+
 // ========= Private methods
 function privateFunc() {
     console.log('Executed from module1.privateFunc()');
@@ -8,10 +10,7 @@ function publicFuncModule1() {
     privateFunc();
     console.log('Executed from module1.publicFuncModule1()');
 
-    System.import('js/module2.js')
-        .then(function(module2) {
-            module2.publicFuncModule2();
-        });
+    module2.publicFuncModule2();
 }
 
 // ========= Exported methods
